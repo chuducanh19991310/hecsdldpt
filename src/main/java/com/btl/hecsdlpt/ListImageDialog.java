@@ -37,6 +37,10 @@ public class ListImageDialog extends javax.swing.JDialog {
         btn_truoc = new javax.swing.JButton();
         btl_sau = new javax.swing.JButton();
         img_lbl = new javax.swing.JLabel();
+        lbl_idx = new javax.swing.JLabel();
+        lblIdxNum = new javax.swing.JLabel();
+        lblPathX = new javax.swing.JLabel();
+        lblPath = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -56,6 +60,14 @@ public class ListImageDialog extends javax.swing.JDialog {
 
         img_lbl.setText("lbl_image");
 
+        lbl_idx.setText("Index:");
+
+        lblIdxNum.setText("0");
+
+        lblPathX.setText("Path:");
+
+        lblPath.setText("jLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -63,6 +75,14 @@ public class ListImageDialog extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(92, 92, 92)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblPathX)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblPath))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lbl_idx)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblIdxNum))
                     .addComponent(img_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btn_truoc)
@@ -75,7 +95,15 @@ public class ListImageDialog extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addComponent(img_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(106, 106, 106)
+                .addGap(45, 45, 45)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_idx)
+                    .addComponent(lblIdxNum))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPathX)
+                    .addComponent(lblPath))
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_truoc)
                     .addComponent(btl_sau))
@@ -118,6 +146,8 @@ public class ListImageDialog extends javax.swing.JDialog {
         if (imagePaths.length == 0) {
             return;
         }
+        lblIdxNum.setText(this.pos.toString());
+        lblPath.setText(imagePaths[this.pos]);
         showImage(imagePaths[this.pos]);
     }
     
@@ -136,5 +166,9 @@ public class ListImageDialog extends javax.swing.JDialog {
     private javax.swing.JButton btl_sau;
     private javax.swing.JButton btn_truoc;
     private javax.swing.JLabel img_lbl;
+    private javax.swing.JLabel lblIdxNum;
+    private javax.swing.JLabel lblPath;
+    private javax.swing.JLabel lblPathX;
+    private javax.swing.JLabel lbl_idx;
     // End of variables declaration//GEN-END:variables
 }

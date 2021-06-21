@@ -26,6 +26,16 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="lblPathX" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="lblPath" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="lbl_idx" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblIdxNum" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <Component id="img_lbl" min="-2" pref="238" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Component id="btn_truoc" min="-2" max="-2" attributes="0"/>
@@ -42,7 +52,17 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               <Component id="img_lbl" min="-2" pref="281" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbl_idx" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblIdxNum" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblPathX" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblPath" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btn_truoc" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btl_sau" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -72,6 +92,26 @@
     <Component class="javax.swing.JLabel" name="img_lbl">
       <Properties>
         <Property name="text" type="java.lang.String" value="lbl_image"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_idx">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Index:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblIdxNum">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblPathX">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Path:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblPath">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
     </Component>
   </SubComponents>

@@ -5,9 +5,12 @@ import com.btl.hecsdlpt.imageSearch.feature.HOG;
 import com.btl.hecsdlpt.imageSearch.storage.Chunk;
 import com.btl.hecsdlpt.imageSearch.storage.StorageEngine;
 import com.btl.hecsdlpt.imageSearch.tool.VectorTool;
+import java.io.BufferedWriter;
 import javax.swing.*;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,9 +25,8 @@ import org.openimaj.image.processing.resize.ResizeProcessor;
 public class FindImageSimilarApp {
 
     public double[] getFeature(String path) throws Exception {
-        System.out.println(path);
-        FImage fImagePre = ResizeProcessor.resample(ImageUtilities.readF(new File(path)), 250, 250);
-        FImage edgePre = ResizeProcessor.resample(ImageUtilities.readF(new File(path)), 250, 250);
+        FImage fImagePre = ImageUtilities.readF(new File(path));
+        FImage edgePre = ImageUtilities.readF(new File(path));
         
         edgePre.processInplace(new CannyEdgeDetector(0.02f, 0.05f, 2f));
         
@@ -34,9 +36,30 @@ public class FindImageSimilarApp {
 
         HOG hog = new HOG(9);
         hog.analyseImage(image, edge);
-        return hog.extractFeature(
+        double[] result =  hog.extractFeature(
             10, 10
         ).values;
+        System.out.println(path);
+//        debugVector(path, result);
+        return result;
+    }
+    private String debugFile = "src/main/debug";
+    
+    public void debugVector(String path, double[] feature) {
+        String result = path + System.lineSeparator();
+        for (int i = 0; i < feature.length; i++) {
+            result = result + feature[i] + " ";
+        }
+        try(FileWriter fw = new FileWriter(debugFile, true);
+                BufferedWriter bw = new BufferedWriter(fw);
+                PrintWriter out = new PrintWriter(bw))
+        {
+            out.printf(result + System.lineSeparator());
+            out.flush();
+            out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
