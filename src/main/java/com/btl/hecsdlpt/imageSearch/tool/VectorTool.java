@@ -3,6 +3,21 @@ package com.btl.hecsdlpt.imageSearch.tool;
 import java.util.*;
 
 public class VectorTool {
+    
+//    public static Double getDistance(List<Double> v1, List<Double> v2) {
+//        if (v1.size() != v2.size()) {
+//            return 0.0;
+//        }
+//        Double tu = 0.0, mau1 = 0.0, mau2 = 0.0;
+//        for (int i = 0; i < v1.size(); i++) {
+//            tu = tu + v1.get(i) * v2.get(i);
+//            mau1 +=  v1.get(i)*v1.get(i);
+//            mau2 +=  v2.get(i)*v2.get(i);
+//        }
+//        
+//        return   (Double) tu /  (Double) (Math.sqrt(mau1) * Math.sqrt(mau2));
+//    }
+    
     public static Double getDistance(List<Double> v1, List<Double> v2) {
         if (v1.size() != v2.size()) {
             return 0.0;

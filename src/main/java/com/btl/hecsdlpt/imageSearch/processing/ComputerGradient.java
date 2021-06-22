@@ -44,7 +44,7 @@ public class ComputerGradient {
                 float po = numOriBins * ori / PI_FLOAT;
                 // cái po này dùng để tính xem nó thuộc bin nào
                 final int oi = (int) Math.floor(po);
-                // floor là làm tròn lên
+                // floor là làm tròn dưới
                 final float of = po - oi;
                 // cái này chia phần xem nó vào bin ở bên trái bao nhiêu và bin ở bên phải bao nhiêu
 
@@ -53,8 +53,8 @@ public class ComputerGradient {
                     magnitudes[i].pixels[r][c] = 0;
 
                 // set
-                magnitudes[oi % numOriBins].pixels[r][c] = (1f - of) * mag;
-                magnitudes[(oi + 1) % numOriBins].pixels[r][c] = of * mag;
+                magnitudes[oi % numOriBins].pixels[r][c] = of * mag;
+                magnitudes[(oi + 1) % numOriBins].pixels[r][c] = (1f-of) * mag;
             }
         }
     }

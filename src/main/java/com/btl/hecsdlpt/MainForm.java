@@ -133,10 +133,6 @@ public class MainForm extends javax.swing.JFrame {
             return ;
         }
         
-        if (Objects.isNull(imageFolder)) {
-            JOptionPane.showConfirmDialog(null, "Not choose image folder");
-        }
-        
         ListImageDialog listImageDialog = new ListImageDialog(this, true);
         listImageDialog.setTitle("Danh sách ảnh tương tự");
         try {

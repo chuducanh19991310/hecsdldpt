@@ -58,7 +58,7 @@ public class GradientOrientationHistogramExtractor {
     public void  computeHistogram(int x, int y, int w, int h, Histogram hist) {
         final int x2 = x + w;
         final int y2 = y + h;
-        final double[] values = hist.values;
+        final double[] values = hist.values; // number of bin 
 
         for (int i = 0; i < values.length; i++) {
             // duyệt qua từng hướng, tính tổng tích lũy,

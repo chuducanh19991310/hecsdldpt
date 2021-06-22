@@ -21,7 +21,7 @@ public class SummedAreaTable {
 
         return A + C - B - D;
         // công thức tính tổng cộng dồn cho khoảng (x1, y1) đến (x2, y2)
-        // Nó giống với việc để tính từ x-y thì tính tổng  từ 1->y trừ đi tổng từ 1->x-1
+        // Nó giống với việc để tính từ x->y thì tính tổng  từ 1->y trừ đi tổng từ 1->x-1
         // ở đây các tọa độ không phải -1 vì ở bước tính tổng cộng dồn đã 
         // thực hiện + 1 trước rồi
     }
